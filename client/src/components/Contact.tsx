@@ -35,8 +35,10 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-slate-950" ref={sectionRef}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-12 gap-10 items-start mb-16">
+          <div className="lg:col-span-5">
+            <div className="w-16 h-1 bg-sky-500/60 rounded-full mb-6 animate-on-scroll" style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}></div>
           <h2 
             className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
@@ -45,17 +47,23 @@ const Contact = () => {
             Let's Connect
           </h2>
           <p 
-            className="text-xl text-slate-400 max-w-3xl mx-auto animate-on-scroll"
+            className="text-xl text-slate-400 max-w-xl animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="contact-subtitle"
           >
             Ready to discuss your next data engineering project or explore collaboration opportunities? I'd love to hear from you.
           </p>
+          </div>
+          <div className="lg:col-span-7 lg:pt-8">
+            <div className="neon-card border-sky-900/25 rounded-xl p-6 text-slate-300">
+              Open to opportunities in data engineering, cloud platforms, and end-to-end modernization initiatives.
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div 
-            className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
+            className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1 md:mt-0 border-sky-900/20"
             style={{ 
               opacity: 0, 
               transform: 'translateY(30px)', 
@@ -75,7 +83,7 @@ const Contact = () => {
           </div>
 
           <div 
-            className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
+            className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1 md:mt-6 border-sky-900/20"
             style={{ 
               opacity: 0, 
               transform: 'translateY(30px)', 
@@ -95,7 +103,7 @@ const Contact = () => {
           </div>
 
           <div 
-            className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
+            className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1 md:mt-12 border-sky-900/20"
             style={{ 
               opacity: 0, 
               transform: 'translateY(30px)', 

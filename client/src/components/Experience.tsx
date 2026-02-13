@@ -72,7 +72,8 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-slate-950" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="mb-16 max-w-4xl">
+          <div className="w-16 h-1 bg-sky-500/60 rounded-full mb-6 animate-on-scroll" style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}></div>
           <h2 
             className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
@@ -89,11 +90,11 @@ const Experience = () => {
           </p>
         </div>
 
-        <div className="space-y-16">
-          {resumeData.experience.map((exp) => (
+        <div className="space-y-14">
+          {resumeData.experience.map((exp, expIndex) => (
             <div 
               key={exp.id} 
-              className="animate-on-scroll neon-card rounded-xl p-8 bg-slate-900/70"
+              className={`animate-on-scroll neon-card rounded-xl p-8 bg-slate-900/70 border-sky-900/25 md:w-[92%] ${expIndex % 2 === 0 ? 'md:mr-auto md:ml-0' : 'md:ml-auto md:mr-0'}`}
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
@@ -126,7 +127,7 @@ const Experience = () => {
 
               <div className="space-y-8">
                 {exp.projects.map((project, projectIndex) => (
-                  <div key={project.id} className="bg-slate-900 border border-slate-800 rounded-lg p-6" data-testid={`project-${project.id}`}>
+                  <div key={project.id} className={`bg-slate-900 border border-slate-800 rounded-lg p-6 ${projectIndex % 2 === 1 ? 'md:ml-6' : ''}`} data-testid={`project-${project.id}`}>
                     <h4 className="text-lg font-bold text-slate-100 mb-2 flex items-center">
                       {getProjectIcon(project.id)}
                       Project {projectIndex + 1}: {project.title}
