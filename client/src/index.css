@@ -193,11 +193,61 @@
     white-space: nowrap;
   }
 
-  .typewriter-cursor {
-    display: inline-block;
-    margin-left: 2px;
-    color: rgb(51 65 85);
-    animation: cursorBlink 1s steps(1, end) infinite;
+  .hero-crazy-bg {
+    background:
+      radial-gradient(circle at 20% 25%, rgba(99, 102, 241, 0.22), transparent 36%),
+      radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.2), transparent 34%),
+      radial-gradient(circle at 52% 80%, rgba(139, 92, 246, 0.16), transparent 40%),
+      linear-gradient(130deg, #f8fafc 0%, #eaf1fb 45%, #eef4ff 100%);
+    animation: bgShift 14s ease-in-out infinite alternate;
+  }
+
+  .hero-scanlines {
+    background:
+      repeating-linear-gradient(
+        0deg,
+        rgba(51, 65, 85, 0.05) 0px,
+        rgba(51, 65, 85, 0.05) 1px,
+        transparent 1px,
+        transparent 8px
+      );
+    mix-blend-mode: multiply;
+    opacity: 0.35;
+    animation: scanDrift 10s linear infinite;
+  }
+
+  .hero-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(36px);
+    opacity: 0.5;
+    animation: blobFloat 9s ease-in-out infinite;
+  }
+
+  .hero-blob-a {
+    width: 24rem;
+    height: 24rem;
+    left: 6%;
+    top: 12%;
+    background: rgba(79, 70, 229, 0.25);
+  }
+
+  .hero-blob-b {
+    width: 22rem;
+    height: 22rem;
+    right: 8%;
+    top: 18%;
+    background: rgba(14, 165, 233, 0.24);
+    animation-delay: 1.4s;
+  }
+
+  .hero-blob-c {
+    width: 20rem;
+    height: 20rem;
+    left: 38%;
+    bottom: 8%;
+    background: rgba(168, 85, 247, 0.22);
+    animation-delay: 2.2s;
   }
 
   @keyframes fadeIn {
@@ -241,8 +291,19 @@
     to { transform: translateX(-50%); }
   }
 
-  @keyframes cursorBlink {
-    0%, 49% { opacity: 1; }
-    50%, 100% { opacity: 0; }
+  @keyframes bgShift {
+    0% { filter: hue-rotate(0deg) saturate(1); }
+    100% { filter: hue-rotate(18deg) saturate(1.08); }
+  }
+
+  @keyframes scanDrift {
+    from { background-position: 0 0; }
+    to { background-position: 0 120px; }
+  }
+
+  @keyframes blobFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(26px, -20px) scale(1.08); }
+    66% { transform: translate(-20px, 18px) scale(0.94); }
   }
 }
