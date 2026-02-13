@@ -40,18 +40,18 @@ const Education = () => {
   };
 
   return (
-    <section id="education" className="py-20 bg-slate-900/70" ref={sectionRef}>
+    <section id="education" className="py-20 bg-transparent" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 neon-text animate-on-scroll"
+            className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 neon-text animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="education-title"
           >
             Education
           </h2>
           <p 
-            className="text-xl text-slate-400 max-w-3xl mx-auto animate-on-scroll"
+            className="text-xl text-slate-600 max-w-3xl mx-auto animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="education-subtitle"
           >
@@ -63,7 +63,7 @@ const Education = () => {
           {resumeData.education.map((edu) => (
             <div 
               key={edu.id}
-              className="animate-on-scroll neon-card bg-slate-900/55 rounded-xl p-8 transition-all duration-300 transform hover:-translate-y-1"
+              className="animate-on-scroll neon-card bg-white/80 rounded-xl p-8 transition-all duration-300 transform hover:-translate-y-1"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
@@ -73,29 +73,29 @@ const Education = () => {
             >
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-slate-100 mb-2" data-testid={`degree-${edu.id}`}>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2" data-testid={`degree-${edu.id}`}>
                     {edu.degree}
                   </h3>
                   {edu.stream && (
-                    <p className="text-xl text-cyan-300 font-semibold mb-2" data-testid={`stream-${edu.id}`}>
+                    <p className="text-xl text-slate-700 font-semibold mb-2" data-testid={`stream-${edu.id}`}>
                       {edu.stream}
                     </p>
                   )}
-                  <p className="text-lg text-slate-300 mb-2" data-testid={`institution-${edu.id}`}>
+                  <p className="text-lg text-slate-700 mb-2" data-testid={`institution-${edu.id}`}>
                     {edu.institution}
                   </p>
-                  <p className="text-slate-400" data-testid={`board-${edu.id}`}>
+                  <p className="text-slate-500" data-testid={`board-${edu.id}`}>
                     {edu.board}
                   </p>
                 </div>
                 <div className="mt-4 lg:mt-0 lg:text-right">
-                  <div className="inline-flex items-center px-4 py-2 bg-cyan-300/15 border border-cyan-300/40 text-cyan-200 rounded-full text-lg font-bold mb-2">
+                  <div className="inline-flex items-center px-4 py-2 bg-slate-100 border border-slate-300 text-slate-700 rounded-full text-lg font-bold mb-2">
                     {getScoreIcon(edu.id)}
                     <span data-testid={`score-${edu.id}`}>
                       {edu.score}{edu.scoreType === 'CGPA' ? ' CGPA' : '%'}
                     </span>
                   </div>
-                  <p className="text-slate-400" data-testid={`year-${edu.id}`}>{edu.year}</p>
+                  <p className="text-slate-500" data-testid={`year-${edu.id}`}>{edu.year}</p>
                 </div>
               </div>
             </div>

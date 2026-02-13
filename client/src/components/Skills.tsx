@@ -64,6 +64,7 @@ const Skills = () => {
       'hadoop': <Database className="mr-3" />,
       'cogs': <ServerCog className="mr-3" />,
       'aws': <SiAmazonwebservices className="mr-3" />,
+      'azure': <Cloud className="mr-3" />,
       'google': <Cloud className="mr-3" />,
       'git-alt': <GitBranch className="mr-3" />,
       'bitbucket': <GitMerge className="mr-3" />,
@@ -86,29 +87,19 @@ const Skills = () => {
     return iconMap[iconName] || <Code className="mr-3" />;
   };
 
-  const getColorClass = (color: string) => {
-    const colorMap: { [key: string]: string } = {
-      'primary-500': 'text-primary-500',
-      'secondary-500': 'text-secondary-500',
-      'accent-orange': 'text-accent-orange',
-      'accent-purple': 'text-accent-purple'
-    };
-    return colorMap[color] || 'text-primary-500';
-  };
-
   return (
-    <section id="skills" className="py-20 bg-slate-950/95" ref={sectionRef}>
+    <section id="skills" className="py-20 bg-transparent" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 neon-text animate-on-scroll"
+            className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 neon-text animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="skills-title"
           >
             Technical Skills
           </h2>
           <p 
-            className="text-xl text-slate-400 max-w-3xl mx-auto animate-on-scroll"
+            className="text-xl text-slate-600 max-w-3xl mx-auto animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="skills-subtitle"
           >
@@ -116,7 +107,7 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="mb-10 flex items-center justify-center gap-5 text-2xl text-cyan-300/90">
+        <div className="mb-10 flex items-center justify-center gap-5 text-2xl text-slate-500">
           <SiAmazonwebservices className="animate-float" />
           <SiApachespark className="animate-float [animation-delay:250ms]" />
           <SiApachekafka className="animate-float [animation-delay:500ms]" />
@@ -127,7 +118,7 @@ const Skills = () => {
           {resumeData.skills.map((skillCategory, index) => (
             <div 
               key={skillCategory.id}
-              className="animate-on-scroll neon-card bg-slate-900/60 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
+              className="animate-on-scroll neon-card bg-white/80 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
@@ -136,20 +127,20 @@ const Skills = () => {
               data-testid={`skill-category-${skillCategory.id}`}
             >
               <div className="flex items-center mb-4">
-                <span className="text-cyan-300 animate-glow">
+                <span className="text-slate-600 animate-glow">
                   {getSkillCategoryIcon(skillCategory.icon)}
                 </span>
-                <h3 className="text-xl font-bold text-slate-100" data-testid={`skill-title-${skillCategory.id}`}>
+                <h3 className="text-xl font-bold text-slate-900" data-testid={`skill-title-${skillCategory.id}`}>
                   {skillCategory.title}
                 </h3>
               </div>
               <div className="space-y-3">
                 {skillCategory.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="flex items-center" data-testid={`skill-item-${skillCategory.id}-${skillIndex}`}>
-                    <span className="text-cyan-200">
+                    <span className="text-slate-500">
                       {getSkillIcon(skill.icon)}
                     </span>
-                    <span className="text-slate-300">{skill.name}</span>
+                    <span className="text-slate-700">{skill.name}</span>
                   </div>
                 ))}
               </div>

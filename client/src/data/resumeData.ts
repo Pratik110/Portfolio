@@ -152,6 +152,7 @@ export const resumeData: ResumeData = {
       color: "secondary-500",
       skills: [
         { name: "AWS (Glue, Lambda, Step Functions, S3, Redshift, CloudFormation, IAM, RDS)", icon: "aws" },
+        { name: "Azure (ADF, Databricks, Event-Driven Pipelines)", icon: "azure" },
         { name: "Snowflake", icon: "snowflake" },
         { name: "Hadoop", icon: "hadoop" }
       ]
