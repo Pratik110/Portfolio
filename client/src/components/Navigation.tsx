@@ -53,7 +53,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md border-b border-slate-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/65 backdrop-blur-xl border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
@@ -62,7 +62,7 @@ const Navigation = () => {
               onClick={() => scrollToSection('#hero')}
               data-testid="nav-logo"
             >
-              <span className="text-slate-900">Pratik</span> Patra
+              <span className="text-slate-900">Pratik</span> <span className="text-slate-500">Patra</span>
             </h1>
           </div>
 
@@ -72,9 +72,9 @@ const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                  className={`px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     activeSection === item.href.substring(1)
-                      ? 'text-slate-900 bg-slate-200'
+                      ? 'text-slate-900 bg-slate-200 shadow-[0_2px_8px_rgba(15,23,42,0.08)]'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                   }`}
                   data-testid={`nav-link-${item.href.substring(1)}`}
@@ -104,7 +104,7 @@ const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-all duration-300 ${
+                className={`block px-3 py-2 rounded-full text-base font-medium w-full text-left transition-all duration-300 ${
                   activeSection === item.href.substring(1)
                     ? 'text-slate-900 bg-slate-200'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
