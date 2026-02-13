@@ -6,7 +6,7 @@ import {
   Gauge, CheckCircle, UserCog, NetworkIcon, Heart,
   FileHeart, Zap, Building2
 } from 'lucide-react';
-import { SiDatabricks, SiApachekafka } from 'react-icons/si';
+import { SiApachekafka } from 'react-icons/si';
 import { resumeData } from '@/data/resumeData';
 
 const Experience = () => {
@@ -61,7 +61,7 @@ const Experience = () => {
 
   const getCompanyLogo = (companyId: string) => {
     const logoMap: { [key: string]: React.ReactNode } = {
-      'zs': <SiDatabricks className="w-4 h-4" />,
+      'zs': <Building2 className="w-4 h-4" />,
       'hashedin': <Building2 className="w-4 h-4" />,
       'adp': <Building2 className="w-4 h-4" />,
       'infosys': <Building2 className="w-4 h-4" />

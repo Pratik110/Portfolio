@@ -1,12 +1,75 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Briefcase, Mail, ChevronDown, Download } from 'lucide-react';
-import { SiDatabricks, SiApachekafka, SiSnowflake } from 'react-icons/si';
+import {
+  SiAmazonwebservices,
+  SiApacheairflow,
+  SiApachespark,
+  SiPython,
+  SiDocker,
+  SiPostgresql,
+  SiGithubactions,
+  SiJenkins
+} from 'react-icons/si';
+import { TbBrandAzure } from 'react-icons/tb';
 import { resumeData } from '@/data/resumeData';
 import resumePdf from '@assets/Resume_Pratik_Patra.pdf';
-import LiveClock from '@/components/LiveClock';
 
 const Hero = () => {
   const { personalInfo } = resumeData;
+  const [typedName, setTypedName] = useState('');
+  const [typedTitle, setTypedTitle] = useState('');
+  const [isTypingTitle, setIsTypingTitle] = useState(false);
+  const [typingDone, setTypingDone] = useState(false);
+
+  const floatingLogos: Array<{ icon: React.ReactNode; top: string; left: string; delay: string }> = [
+    { icon: <SiAmazonwebservices />, top: '18%', left: '10%', delay: '0s' },
+    { icon: <TbBrandAzure />, top: '24%', left: '84%', delay: '0.8s' },
+    { icon: <SiApacheairflow />, top: '68%', left: '14%', delay: '1.4s' },
+    { icon: <SiApachespark />, top: '66%', left: '86%', delay: '2s' },
+    { icon: <SiPython />, top: '38%', left: '5%', delay: '1.1s' },
+    { icon: <SiDocker />, top: '42%', left: '92%', delay: '0.4s' },
+    { icon: <SiPostgresql />, top: '80%', left: '50%', delay: '1.8s' },
+    { icon: <SiGithubactions />, top: '13%', left: '52%', delay: '2.5s' },
+    { icon: <SiJenkins />, top: '56%', left: '76%', delay: '1.6s' },
+  ];
+
+  useEffect(() => {
+    let active = true;
+    const fullName = personalInfo.name;
+    const fullTitle = personalInfo.title;
+    let nameIdx = 0;
+    let titleIdx = 0;
+
+    const typeName = () => {
+      if (!active) return;
+      if (nameIdx < fullName.length) {
+        setTypedName(fullName.slice(0, nameIdx + 1));
+        nameIdx += 1;
+        setTimeout(typeName, 80);
+        return;
+      }
+      setIsTypingTitle(true);
+      setTimeout(typeTitle, 220);
+    };
+
+    const typeTitle = () => {
+      if (!active) return;
+      if (titleIdx < fullTitle.length) {
+        setTypedTitle(fullTitle.slice(0, titleIdx + 1));
+        titleIdx += 1;
+        setTimeout(typeTitle, 65);
+        return;
+      }
+      setIsTypingTitle(false);
+      setTypingDone(true);
+    };
+
+    typeName();
+
+    return () => {
+      active = false;
+    };
+  }, [personalInfo.name, personalInfo.title]);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -23,30 +86,33 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center space-stars">
-      <div className="absolute inset-0 futuristic-grid opacity-50"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.16),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(56,189,248,0.16),transparent_25%)]"></div>
-      <div className="absolute left-1/2 top-1/2 h-[72vmin] w-[72vmin] -translate-x-1/2 -translate-y-1/2 orbital-ring opacity-45"></div>
-      <div className="absolute left-1/2 top-1/2 h-[54vmin] w-[54vmin] -translate-x-1/2 -translate-y-1/2 orbital-ring opacity-35 [animation-direction:reverse]"></div>
+    <section id="hero" className="relative min-h-screen flex items-center justify-center">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(148,163,184,0.12),transparent_32%),radial-gradient(circle_at_80%_10%,rgba(148,163,184,0.10),transparent_28%)]"></div>
+      <div className="absolute inset-0 pointer-events-none">
+        {floatingLogos.map((item, index) => (
+          <div
+            key={`float-logo-${index}`}
+            className="absolute text-slate-400/45 text-2xl md:text-3xl animate-float"
+            style={{ top: item.top, left: item.left, animationDelay: item.delay }}
+            aria-hidden="true"
+          >
+            {item.icon}
+          </div>
+        ))}
+      </div>
       <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 pt-24">
         <div className="animate-fade-in">
-          <div className="mb-6 flex justify-center md:justify-end">
-            <LiveClock />
-          </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-slate-900 neon-text" data-testid="hero-name">
-            {personalInfo.name}
+            {typedName}
+            {!typingDone && !isTypingTitle && <span className="typewriter-cursor" aria-hidden="true">|</span>}
           </h1>
           <h2 className="text-2xl md:text-3xl font-medium text-slate-600 mb-8 animate-slide-up tracking-wide" data-testid="hero-title">
-            {personalInfo.title}
+            {typedTitle}
+            {!typingDone && isTypingTitle && <span className="typewriter-cursor" aria-hidden="true">|</span>}
           </h2>
           <p className="text-lg md:text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up" data-testid="hero-description">
             Data Engineer specializing in AWS and Big Data, with expertise in Spark, Snowflake, and Python-based ETL automation. Experienced in cloud migrations, cost optimization, and CI/CD integration for production-ready data platforms.
           </p>
-          <div className="flex items-center justify-center gap-3 mb-12 text-sm text-slate-600 font-mono">
-            <span className="futuristic-pill rounded-full px-3 py-1 inline-flex items-center gap-2"><SiDatabricks className="animate-float" />Databricks</span>
-            <span className="futuristic-pill rounded-full px-3 py-1 inline-flex items-center gap-2"><SiApachekafka className="animate-float [animation-delay:300ms]" />Kafka</span>
-            <span className="futuristic-pill rounded-full px-3 py-1 inline-flex items-center gap-2"><SiSnowflake className="animate-float [animation-delay:600ms]" />Snowflake</span>
-          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
             <button
               onClick={() => scrollToSection('#experience')}
