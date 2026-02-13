@@ -39,28 +39,19 @@ const Education = () => {
     return iconMap[educationId] || <GraduationCap className="w-4 h-4 mr-2" />;
   };
 
-  const getScoreColor = (educationId: string) => {
-    const colorMap: { [key: string]: string } = {
-      'btech': 'bg-secondary-500',
-      'plus-two': 'bg-accent-orange',
-      'tenth': 'bg-accent-purple'
-    };
-    return colorMap[educationId] || 'bg-primary-500';
-  };
-
   return (
-    <section id="education" className="py-20 bg-slate-800" ref={sectionRef}>
+    <section id="education" className="py-20 bg-slate-900/70" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent animate-on-scroll"
+            className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 neon-text animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="education-title"
           >
             Education
           </h2>
           <p 
-            className="text-xl text-gray-400 max-w-3xl mx-auto animate-on-scroll"
+            className="text-xl text-slate-400 max-w-3xl mx-auto animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="education-subtitle"
           >
@@ -69,10 +60,10 @@ const Education = () => {
         </div>
 
         <div className="space-y-8">
-          {resumeData.education.map((edu, index) => (
+          {resumeData.education.map((edu) => (
             <div 
               key={edu.id}
-              className={`animate-on-scroll bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl p-8 shadow-2xl border border-slate-600 hover:border-${getScoreColor(edu.id).replace('bg-', '').replace('-500', '-400')} transition-all duration-300 transform hover:-translate-y-1`}
+              className="animate-on-scroll neon-card bg-slate-900/55 rounded-xl p-8 transition-all duration-300 transform hover:-translate-y-1"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
@@ -82,29 +73,29 @@ const Education = () => {
             >
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-white mb-2" data-testid={`degree-${edu.id}`}>
+                  <h3 className="text-2xl font-bold text-slate-100 mb-2" data-testid={`degree-${edu.id}`}>
                     {edu.degree}
                   </h3>
                   {edu.stream && (
-                    <p className="text-xl text-primary-400 font-semibold mb-2" data-testid={`stream-${edu.id}`}>
+                    <p className="text-xl text-cyan-300 font-semibold mb-2" data-testid={`stream-${edu.id}`}>
                       {edu.stream}
                     </p>
                   )}
-                  <p className="text-lg text-gray-300 mb-2" data-testid={`institution-${edu.id}`}>
+                  <p className="text-lg text-slate-300 mb-2" data-testid={`institution-${edu.id}`}>
                     {edu.institution}
                   </p>
-                  <p className="text-gray-400" data-testid={`board-${edu.id}`}>
+                  <p className="text-slate-400" data-testid={`board-${edu.id}`}>
                     {edu.board}
                   </p>
                 </div>
                 <div className="mt-4 lg:mt-0 lg:text-right">
-                  <div className={`inline-flex items-center px-4 py-2 ${getScoreColor(edu.id)} text-white rounded-full text-lg font-bold mb-2`}>
+                  <div className="inline-flex items-center px-4 py-2 bg-cyan-300/15 border border-cyan-300/40 text-cyan-200 rounded-full text-lg font-bold mb-2">
                     {getScoreIcon(edu.id)}
                     <span data-testid={`score-${edu.id}`}>
                       {edu.score}{edu.scoreType === 'CGPA' ? ' CGPA' : '%'}
                     </span>
                   </div>
-                  <p className="text-gray-400" data-testid={`year-${edu.id}`}>{edu.year}</p>
+                  <p className="text-slate-400" data-testid={`year-${edu.id}`}>{edu.year}</p>
                 </div>
               </div>
             </div>

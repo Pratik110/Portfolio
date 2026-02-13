@@ -11,55 +11,72 @@ export const resumeData: ResumeData = {
   },
   experience: [
     {
+      id: "zs",
+      position: "Business Technology Solutions Consultant",
+      company: "ZS",
+      duration: "10th Nov 2025 – Present",
+      startDate: "10th Nov 2025",
+      current: true,
+      projects: [
+        {
+          id: "zs-healthcare-fhir",
+          title: "FHIR Healthcare Data Platform",
+          industry: "Healthcare",
+          role: "Senior Data Engineer",
+          achievements: [
+            "Building a FHIR healthcare data platform to convert enterprise data into FHIR-compliant standards using Medallion architecture (Bronze-Silver-Gold).",
+            "Using ADF, Databricks, Kafka, PySpark, Python, and SQL to ingest and process data from SQL Server, flat files, JSON, and Kafka-based streaming sources."
+          ]
+        }
+      ]
+    },
+    {
       id: "hashedin",
       position: "Software Engineer III",
       company: "HashedIn by Deloitte",
-      duration: "Jan 2022 – Present",
-      startDate: "Jan 2022",
-      current: true,
+      duration: "10th Jan 2022 – 31st Oct 2025",
+      startDate: "10th Jan 2022",
+      endDate: "31st Oct 2025",
+      current: false,
       projects: [
         {
           id: "capital-markets",
           title: "Capital Markets Modernization",
           industry: "Capital Markets",
-          role: "Software Engineer",
+          role: "Data Engineer",
           achievements: [
-            "Led a 5-member development team to successfully deliver the modernization of Cost Basis statements, overseeing design, implementation, and seamless production deployment.",
-            "Architected and deployed scalable AWS data pipelines using Glue, Lambda, and CloudFormation Templates, ensuring automation, cross-account data flow, and real-time notifications with SNS-SQS.",
-            "Transformed legacy systems by reverse-engineering code, drafting comprehensive requirement and low-level design documents, and ensuring end-to-end functional parity in the cloud.",
-            "Pioneered the setup of the first ORDS consumer cluster for cost basis, collaborating with DBAAS teams and resolving complex integration issues across RedShift, Aurora, and DB2.",
-            "Delivered 10+ production-grade enhancements in cost basis jobs, including custom filtration logic, custodian comment handling, and mutual fund validation—dramatically increasing accuracy and transparency.",
-            "Reduced manual effort by up to 90% by building Python-based comparison tools to analyse unpredictable data from legacy vs. cloud systems.",
-            "Suggested key architectural changes such as decoupling Lambda from Glue, resulting in significant cost savings and runtime optimization.",
-            "Ensured flawless production deployments by coordinating with IAM, Prod Support, Tech Approvers, and external teams, while handling network-level Glue connector issues under pressure.",
-            "Integrated strict code quality controls into CI/CD workflows, introduced SonarQube compliance, and established best practices as a benchmark for team coding standards.",
-            "Mentored junior developers and new joiners, drove sprint planning with stakeholders, and maintained strong communication with cross-functional teams."
+            "Led a 5-engineer squad to modernize Cost Basis statement generation, designed cloud architecture, and delivered production rollout replacing legacy batch jobs.",
+            "Built automated Glue/Spark pipelines with cross-account access, SNS/SQS alerts, and error handling, reducing end-to-end manual effort by approximately 600 hours per year.",
+            "Engineered Python comparison tools for legacy versus cloud outputs, reducing manual validation by around 90% and accelerating production sign-off.",
+            "Proposed and implemented decoupling of Lambda from Glue to optimize job runtimes and reduce pipeline cost.",
+            "Delivered 10+ production-grade enhancements in cost basis jobs, including filtration logic, custodian comment handling, and mutual fund validation.",
+            "Integrated SonarQube and CI/CD checks into pipeline deployments to enforce code quality and reduce post-deployment defects.",
+            "Coordinated with IAM, prod support, tech approvers, and external teams to ensure smooth production deployments under tight timelines."
           ]
         },
         {
           id: "healthcare-migration",
           title: "Healthcare Data Migration",
           industry: "Health Care",
-          role: "Software Engineer",
+          role: "Data Engineer",
           achievements: [
             "Migrated approximately 300 tables from Hadoop to Snowflake to enhance data accessibility, scalability, and security for research advancements.",
-            "Developed ETL pipelines using Python, PySpark, and AWS services (Lambda, Glue, Step Functions) for data extraction, transformation, and loading.",
+            "Developed ETL pipelines using Python, Spark, and AWS services (Lambda, Glue, Step Functions) for data extraction, transformation, and loading.",
             "Implemented tokenization and encryption functions for PHI/PII data to adhere to client data security policies.",
             "Utilized Python scripts for generating tokenized files and partitioned SQL scripts, reducing manual efforts by 90%.",
-            "Coordinated with clients and senior stakeholders to resolve blockers and dependencies."
+            "Collaborated with senior stakeholders to resolve critical data migration blockers, enabling on-time delivery."
           ]
         },
         {
           id: "claims-settlement",
           title: "Claims Settlement Solutions",
           industry: "Health Care",
-          role: "Software Engineer",
+          role: "Data Engineer",
           achievements: [
+            "Created SSIS packages for data extraction, transformation, and loading, reducing processing time by 30%.",
             "Enhanced existing features and incorporated new features for claims settlement solutions.",
             "Developed complex T-SQL queries and stored procedures for efficient data retrieval and manipulation.",
             "Designed and maintained data models for improved organization and accessibility.",
-            "Collaborated with cross-functional teams to deliver data solutions on time and within budget.",
-            "Created SSIS packages for data extraction, transformation, and loading, reducing processing time by 30%.",
             "Implemented error handling and logging mechanisms to ensure data integrity.",
             "Conducted data quality assessments and cleansing processes to enhance data accuracy."
           ]
@@ -70,9 +87,9 @@ export const resumeData: ResumeData = {
       id: "adp",
       position: "Release (DevOps) Engineer",
       company: "ADP",
-      duration: "Aug 2021 - Jan 2022",
-      startDate: "Aug 2021",
-      endDate: "Jan 2022",
+      duration: "16th Aug 2021 – 5th Jan 2022",
+      startDate: "16th Aug 2021",
+      endDate: "5th Jan 2022",
       current: false,
       projects: [
         {
@@ -93,9 +110,9 @@ export const resumeData: ResumeData = {
       id: "infosys",
       position: "Systems Engineer (MSBI Developer)",
       company: "Infosys",
-      duration: "Dec 2019 - Aug 2021",
-      startDate: "Dec 2019",
-      endDate: "Aug 2021",
+      duration: "30th Dec 2019 – 11th Aug 2021",
+      startDate: "30th Dec 2019",
+      endDate: "11th Aug 2021",
       current: false,
       projects: [
         {
@@ -116,72 +133,96 @@ export const resumeData: ResumeData = {
   ],
   skills: [
     {
-      id: "programming",
-      title: "Programming & Development",
+      id: "big-data-processing",
+      title: "Big Data & Processing",
       icon: "code",
-      color: "primary-500",
-      skills: [
-        { name: "Python", icon: "python" },
-        { name: "SQL", icon: "database" },
-        { name: "Data Structures & Algorithms", icon: "project-diagram" }
-      ]
-    },
-    {
-      id: "data-management",
-      title: "Data Management & ETL",
-      icon: "database",
       color: "secondary-500",
       skills: [
+        { name: "Spark", icon: "spark" },
         { name: "PySpark", icon: "python" },
-        { name: "MS-SQL, Oracle, PostgreSQL", icon: "server" },
-        { name: "Snowflake", icon: "snowflake" },
-        { name: "SSIS", icon: "cogs" }
+        { name: "ETL/ELT Pipelines", icon: "pipeline" },
+        { name: "Data Migration", icon: "database" },
+        { name: "Data Modeling (Dimensional & Relational)", icon: "project-diagram" }
       ]
     },
     {
       id: "cloud-platforms",
-      title: "Cloud Platforms",
+      title: "Cloud & Data Platforms",
       icon: "cloud",
-      color: "accent-orange",
+      color: "secondary-500",
       skills: [
-        { name: "AWS (S3, Lambda, Glue, IAM, SNS, Step Functions, EC2, RedShift, DynamoDB, Aurora, RDS, EventBridge)", icon: "aws" },
-        { name: "GCP (Basic Experience)", icon: "google" }
+        { name: "AWS (Glue, Lambda, Step Functions, S3, Redshift, CloudFormation, IAM, RDS)", icon: "aws" },
+        { name: "Snowflake", icon: "snowflake" },
+        { name: "Hadoop", icon: "hadoop" }
       ]
     },
     {
-      id: "devops",
-      title: "DevOps & Version Control",
-      icon: "tools",
-      color: "accent-purple",
+      id: "programming-scripting",
+      title: "Programming & Scripting",
+      icon: "code",
+      color: "secondary-500",
       skills: [
+        { name: "Python", icon: "python" },
+        { name: "SQL Performance Tuning/Optimization", icon: "database" },
+        { name: "Shell Scripting", icon: "terminal" }
+      ]
+    },
+    {
+      id: "databases",
+      title: "Databases",
+      icon: "database",
+      color: "secondary-500",
+      skills: [
+        { name: "Oracle", icon: "database" },
+        { name: "MS SQL Server", icon: "server" },
+        { name: "PostgreSQL", icon: "database" }
+      ]
+    },
+    {
+      id: "integration-etl-tools",
+      title: "Data Integration & ETL Tools",
+      icon: "plug",
+      color: "secondary-500",
+      skills: [
+        { name: "SSIS", icon: "cogs" },
+        { name: "AWS Glue", icon: "aws" },
+        { name: "REST API Integration", icon: "exchange-alt" }
+      ]
+    },
+    {
+      id: "devops-cicd",
+      title: "DevOps & CI/CD",
+      icon: "tools",
+      color: "secondary-500",
+      skills: [
+        { name: "CloudFormation", icon: "cloud" },
         { name: "Git", icon: "git-alt" },
-        { name: "Bitbucket", icon: "bitbucket" },
+        { name: "Jenkins", icon: "settings" },
+        { name: "SonarQube", icon: "shield" },
         { name: "Docker", icon: "docker" }
       ]
     },
     {
-      id: "apis",
-      title: "APIs & Libraries",
-      icon: "plug",
-      color: "primary-500",
+      id: "security-compliance",
+      title: "Security & Compliance",
+      icon: "shield",
+      color: "secondary-500",
       skills: [
-        { name: "REST API Testing (Postman)", icon: "exchange-alt" },
-        { name: "Pandas", icon: "chart-line" },
-        { name: "NumPy", icon: "calculator" }
+        { name: "PHI/PII Tokenization", icon: "shield" },
+        { name: "Data Encryption", icon: "lock" },
+        { name: "IAM", icon: "user-tie" }
       ]
     },
     {
-      id: "soft-skills",
-      title: "Soft Skills",
-      icon: "users",
+      id: "tools-others",
+      title: "Tools & Others",
+      icon: "settings",
       color: "secondary-500",
       skills: [
-        { name: "Sprint Management", icon: "tasks" },
-        { name: "Requirement Gathering", icon: "clipboard-list" },
-        { name: "Team Leadership", icon: "user-tie" },
-        { name: "Stakeholder Management", icon: "handshake" },
-        { name: "Conflict Resolution", icon: "balance-scale" },
-        { name: "Effective Communication", icon: "comments" }
+        { name: "Postman", icon: "exchange-alt" },
+        { name: "JIRA", icon: "clipboard-list" },
+        { name: "Agile/Scrum", icon: "tasks" },
+        { name: "GitHub Actions", icon: "github" }
       ]
     }
   ],

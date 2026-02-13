@@ -3,9 +3,13 @@ import {
   Code, Database, Cloud, Settings, Plug, Users,
   Server, Snowflake, ServerCog, ArrowUpDown, BarChart3,
   Calculator, ClipboardList, UserCheck, Handshake,
-  Scale, MessageSquare, GitBranch, GitMerge, 
-  Container, Target
+  Scale, MessageSquare, GitBranch, GitMerge,
+  Container, Target, Shield, Lock, Terminal
 } from 'lucide-react';
+import {
+  SiPython, SiApachekafka, SiApachespark, SiSnowflake, SiAmazonwebservices,
+  SiPostgresql, SiDocker, SiGithubactions, SiJenkins, SiDatabricks
+} from 'react-icons/si';
 import { resumeData } from '@/data/resumeData';
 
 const Skills = () => {
@@ -50,17 +54,20 @@ const Skills = () => {
 
   const getSkillIcon = (iconName: string) => {
     const iconMap: { [key: string]: React.ReactNode } = {
-      'python': <Code className="mr-3" />,
+      'python': <SiPython className="mr-3" />,
+      'spark': <SiApachespark className="mr-3" />,
+      'pipeline': <SiDatabricks className="mr-3" />,
       'database': <Database className="mr-3" />,
       'project-diagram': <Target className="mr-3" />,
       'server': <Server className="mr-3" />,
-      'snowflake': <Snowflake className="mr-3" />,
+      'snowflake': <SiSnowflake className="mr-3" />,
+      'hadoop': <Database className="mr-3" />,
       'cogs': <ServerCog className="mr-3" />,
-      'aws': <Cloud className="mr-3" />,
+      'aws': <SiAmazonwebservices className="mr-3" />,
       'google': <Cloud className="mr-3" />,
       'git-alt': <GitBranch className="mr-3" />,
       'bitbucket': <GitMerge className="mr-3" />,
-      'docker': <Container className="mr-3" />,
+      'docker': <SiDocker className="mr-3" />,
       'exchange-alt': <ArrowUpDown className="mr-3" />,
       'chart-line': <BarChart3 className="mr-3" />,
       'calculator': <Calculator className="mr-3" />,
@@ -69,7 +76,12 @@ const Skills = () => {
       'user-tie': <UserCheck className="mr-3" />,
       'handshake': <Handshake className="mr-3" />,
       'balance-scale': <Scale className="mr-3" />,
-      'comments': <MessageSquare className="mr-3" />
+      'comments': <MessageSquare className="mr-3" />,
+      'settings': <SiJenkins className="mr-3" />,
+      'shield': <Shield className="mr-3" />,
+      'lock': <Lock className="mr-3" />,
+      'terminal': <Terminal className="mr-3" />,
+      'github': <SiGithubactions className="mr-3" />
     };
     return iconMap[iconName] || <Code className="mr-3" />;
   };
@@ -85,18 +97,18 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-slate-900" ref={sectionRef}>
+    <section id="skills" className="py-20 bg-slate-950/95" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent animate-on-scroll"
+            className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 neon-text animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="skills-title"
           >
             Technical Skills
           </h2>
           <p 
-            className="text-xl text-gray-400 max-w-3xl mx-auto animate-on-scroll"
+            className="text-xl text-slate-400 max-w-3xl mx-auto animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="skills-subtitle"
           >
@@ -104,11 +116,18 @@ const Skills = () => {
           </p>
         </div>
 
+        <div className="mb-10 flex items-center justify-center gap-5 text-2xl text-cyan-300/90">
+          <SiAmazonwebservices className="animate-float" />
+          <SiApachespark className="animate-float [animation-delay:250ms]" />
+          <SiApachekafka className="animate-float [animation-delay:500ms]" />
+          <SiPostgresql className="animate-float [animation-delay:750ms]" />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resumeData.skills.map((skillCategory, index) => (
             <div 
               key={skillCategory.id}
-              className={`animate-on-scroll bg-gradient-to-br from-slate-800 to-slate-700 rounded-xl p-6 shadow-xl border border-slate-600 hover:border-${skillCategory.color.replace('-500', '-400')} transition-all duration-300 transform hover:-translate-y-1`}
+              className="animate-on-scroll neon-card bg-slate-900/60 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
@@ -117,20 +136,20 @@ const Skills = () => {
               data-testid={`skill-category-${skillCategory.id}`}
             >
               <div className="flex items-center mb-4">
-                <span className={getColorClass(skillCategory.color)}>
+                <span className="text-cyan-300 animate-glow">
                   {getSkillCategoryIcon(skillCategory.icon)}
                 </span>
-                <h3 className="text-xl font-bold text-white" data-testid={`skill-title-${skillCategory.id}`}>
+                <h3 className="text-xl font-bold text-slate-100" data-testid={`skill-title-${skillCategory.id}`}>
                   {skillCategory.title}
                 </h3>
               </div>
               <div className="space-y-3">
                 {skillCategory.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="flex items-center" data-testid={`skill-item-${skillCategory.id}-${skillIndex}`}>
-                    <span className={`${getColorClass(skillCategory.color).replace('text-', 'text-').replace('-500', '-400')}`}>
+                    <span className="text-cyan-200">
                       {getSkillIcon(skill.icon)}
                     </span>
-                    <span className="text-gray-300">{skill.name}</span>
+                    <span className="text-slate-300">{skill.name}</span>
                   </div>
                 ))}
               </div>
