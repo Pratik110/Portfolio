@@ -42,8 +42,7 @@ const Education = () => {
   return (
     <section id="education" className="py-20 bg-slate-950" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 max-w-4xl">
-          <div className="w-16 h-1 bg-sky-500/60 rounded-full mb-6 animate-on-scroll" style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}></div>
+        <div className="text-center mb-16">
           <h2 
             className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
@@ -61,10 +60,10 @@ const Education = () => {
         </div>
 
         <div className="space-y-8">
-          {resumeData.education.map((edu, index) => (
+          {resumeData.education.map((edu) => (
             <div 
               key={edu.id}
-              className={`animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-8 transition-all duration-300 transform hover:-translate-y-1 border-sky-900/20 md:w-[88%] ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}
+              className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-8 transition-all duration-300 transform hover:-translate-y-1"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 

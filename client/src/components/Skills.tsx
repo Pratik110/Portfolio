@@ -110,17 +110,16 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-slate-950" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 max-w-4xl ml-auto">
-          <div className="w-16 h-1 bg-sky-500/60 rounded-full mb-6 ml-auto animate-on-scroll" style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}></div>
+        <div className="text-center mb-16">
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 animate-on-scroll text-right"
+            className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="skills-title"
           >
             Technical Skills
           </h2>
           <p 
-            className="text-xl text-slate-400 max-w-3xl ml-auto animate-on-scroll text-right"
+            className="text-xl text-slate-400 max-w-3xl mx-auto animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="skills-subtitle"
           >
@@ -144,10 +143,10 @@ const Skills = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {resumeData.skills.map((skillCategory, index) => (
+          {resumeData.skills.map((skillCategory) => (
             <div 
               key={skillCategory.id}
-              className={`animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1 border-sky-900/20 ${index % 3 === 1 ? 'md:-translate-y-6' : ''} ${index % 3 === 2 ? 'md:translate-y-4' : ''}`}
+              className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
