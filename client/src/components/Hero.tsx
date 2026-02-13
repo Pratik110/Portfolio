@@ -1,7 +1,9 @@
 import React from 'react';
-import { Briefcase, Mail, ChevronDown } from 'lucide-react';
+import { Briefcase, Mail, ChevronDown, Download } from 'lucide-react';
 import { SiDatabricks, SiApachekafka, SiSnowflake } from 'react-icons/si';
 import { resumeData } from '@/data/resumeData';
+import resumePdf from '@assets/Resume_Pratik_Patra.pdf';
+import LiveClock from '@/components/LiveClock';
 
 const Hero = () => {
   const { personalInfo } = resumeData;
@@ -28,6 +30,9 @@ const Hero = () => {
       <div className="absolute left-1/2 top-1/2 h-[54vmin] w-[54vmin] -translate-x-1/2 -translate-y-1/2 orbital-ring opacity-35 [animation-direction:reverse]"></div>
       <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 pt-24">
         <div className="animate-fade-in">
+          <div className="mb-6 flex justify-center md:justify-end">
+            <LiveClock />
+          </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-slate-900 neon-text" data-testid="hero-name">
             {personalInfo.name}
           </h1>
@@ -59,6 +64,15 @@ const Hero = () => {
               <Mail className="w-5 h-5 mr-2" />
               Get In Touch
             </button>
+            <a
+              href={resumePdf}
+              download="Pratik_Patra_Resume.pdf"
+              className="inline-flex items-center px-8 py-4 border border-slate-500 text-slate-800 hover:bg-slate-100 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+              data-testid="button-download-resume"
+            >
+              <Download className="w-5 h-5 mr-2" />
+              Download Resume
+            </a>
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-subtle">

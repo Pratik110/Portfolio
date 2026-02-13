@@ -1,15 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import { 
   Code, Database, Cloud, Settings, Plug, Users,
-  Server, Snowflake, ServerCog, ArrowUpDown, BarChart3,
+  Server, ServerCog, ArrowUpDown, BarChart3,
   Calculator, ClipboardList, UserCheck, Handshake,
   Scale, MessageSquare, GitBranch, GitMerge,
-  Container, Target, Shield, Lock, Terminal
+  Target, Shield, Lock, Terminal
 } from 'lucide-react';
 import {
   SiPython, SiApachekafka, SiApachespark, SiSnowflake, SiAmazonwebservices,
-  SiPostgresql, SiDocker, SiGithubactions, SiJenkins, SiDatabricks
+  SiPostgresql, SiDocker, SiGithubactions, SiJenkins, SiDatabricks, SiApacheairflow
 } from 'react-icons/si';
+import { TbBrandAzure } from 'react-icons/tb';
 import { resumeData } from '@/data/resumeData';
 
 const Skills = () => {
@@ -47,7 +48,9 @@ const Skills = () => {
       'cloud': <Cloud className="text-3xl mr-4" />,
       'tools': <Settings className="text-3xl mr-4" />,
       'plug': <Plug className="text-3xl mr-4" />,
-      'users': <Users className="text-3xl mr-4" />
+      'users': <Users className="text-3xl mr-4" />,
+      'shield': <Shield className="text-3xl mr-4" />,
+      'settings': <Settings className="text-3xl mr-4" />
     };
     return iconMap[iconName] || <Code className="text-3xl mr-4" />;
   };
@@ -64,7 +67,8 @@ const Skills = () => {
       'hadoop': <Database className="mr-3" />,
       'cogs': <ServerCog className="mr-3" />,
       'aws': <SiAmazonwebservices className="mr-3" />,
-      'azure': <Cloud className="mr-3" />,
+      'azure': <TbBrandAzure className="mr-3" />,
+      'airflow': <SiApacheairflow className="mr-3" />,
       'google': <Cloud className="mr-3" />,
       'git-alt': <GitBranch className="mr-3" />,
       'bitbucket': <GitMerge className="mr-3" />,
@@ -87,6 +91,22 @@ const Skills = () => {
     return iconMap[iconName] || <Code className="mr-3" />;
   };
 
+  const marqueeLogos: Array<{ name: string; icon: React.ReactNode }> = [
+    { name: 'AWS', icon: <SiAmazonwebservices /> },
+    { name: 'Azure', icon: <TbBrandAzure /> },
+    { name: 'Databricks', icon: <SiDatabricks /> },
+    { name: 'Spark', icon: <SiApachespark /> },
+    { name: 'Kafka', icon: <SiApachekafka /> },
+    { name: 'Snowflake', icon: <SiSnowflake /> },
+    { name: 'Airflow', icon: <SiApacheairflow /> },
+    { name: 'PostgreSQL', icon: <SiPostgresql /> },
+    { name: 'Docker', icon: <SiDocker /> },
+    { name: 'Jenkins', icon: <SiJenkins /> },
+    { name: 'GitHub Actions', icon: <SiGithubactions /> },
+  ];
+
+  const marqueeItems = [...marqueeLogos, ...marqueeLogos];
+
   return (
     <section id="skills" className="py-20 bg-transparent" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,15 +127,23 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="mb-10 flex items-center justify-center gap-5 text-2xl text-slate-500">
-          <SiAmazonwebservices className="animate-float" />
-          <SiApachespark className="animate-float [animation-delay:250ms]" />
-          <SiApachekafka className="animate-float [animation-delay:500ms]" />
-          <SiPostgresql className="animate-float [animation-delay:750ms]" />
+        <div className="mb-12 overflow-hidden rounded-xl border border-slate-300/70 bg-white/70 backdrop-blur-sm">
+          <div className="logo-marquee-track">
+            {marqueeItems.map((item, index) => (
+              <div
+                key={`${item.name}-${index}`}
+                className="logo-marquee-item"
+                data-testid={`skills-logo-${item.name.toLowerCase().replace(/\\s+/g, '-')}-${index}`}
+              >
+                <span className="text-xl">{item.icon}</span>
+                <span>{item.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {resumeData.skills.map((skillCategory, index) => (
+          {resumeData.skills.map((skillCategory) => (
             <div 
               key={skillCategory.id}
               className="animate-on-scroll neon-card bg-white/80 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"

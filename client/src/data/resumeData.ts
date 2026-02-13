@@ -187,6 +187,7 @@ export const resumeData: ResumeData = {
       skills: [
         { name: "SSIS", icon: "cogs" },
         { name: "AWS Glue", icon: "aws" },
+        { name: "Apache Airflow", icon: "airflow" },
         { name: "REST API Integration", icon: "exchange-alt" }
       ]
     },
