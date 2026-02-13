@@ -34,18 +34,18 @@ const Contact = () => {
   const { personalInfo } = resumeData;
 
   return (
-    <section id="contact" className="py-20 bg-transparent" ref={sectionRef}>
+    <section id="contact" className="py-20 bg-slate-950" ref={sectionRef}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-16">
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 neon-text animate-on-scroll"
+            className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="contact-title"
           >
             Let's Connect
           </h2>
           <p 
-            className="text-xl text-slate-600 max-w-3xl mx-auto animate-on-scroll"
+            className="text-xl text-slate-400 max-w-3xl mx-auto animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="contact-subtitle"
           >
@@ -55,7 +55,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div 
-            className="animate-on-scroll neon-card bg-white/80 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
+            className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
             style={{ 
               opacity: 0, 
               transform: 'translateY(30px)', 
@@ -63,11 +63,11 @@ const Contact = () => {
             }}
             data-testid="contact-phone"
           >
-            <Phone className="w-8 h-8 text-slate-600 mb-4 mx-auto animate-glow" />
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Phone</h3>
+            <Phone className="w-8 h-8 text-slate-400 mb-4 mx-auto animate-glow" />
+            <h3 className="text-lg font-bold text-slate-100 mb-2">Phone</h3>
             <a 
               href={`tel:${personalInfo.phone}`} 
-              className="text-slate-700 hover:text-slate-900 transition-colors duration-300"
+              className="text-slate-300 hover:text-slate-100 transition-colors duration-300"
               data-testid="phone-link"
             >
               {personalInfo.phone}
@@ -75,7 +75,7 @@ const Contact = () => {
           </div>
 
           <div 
-            className="animate-on-scroll neon-card bg-white/80 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
+            className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
             style={{ 
               opacity: 0, 
               transform: 'translateY(30px)', 
@@ -83,11 +83,11 @@ const Contact = () => {
             }}
             data-testid="contact-email"
           >
-            <SiGmail className="w-8 h-8 text-slate-600 mb-4 mx-auto animate-glow" />
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Email</h3>
+            <SiGmail className="w-8 h-8 text-slate-400 mb-4 mx-auto animate-glow" />
+            <h3 className="text-lg font-bold text-slate-100 mb-2">Email</h3>
             <a 
               href={`mailto:${personalInfo.email}`} 
-              className="text-slate-700 hover:text-slate-900 transition-colors duration-300"
+              className="text-slate-300 hover:text-slate-100 transition-colors duration-300"
               data-testid="email-link"
             >
               {personalInfo.email}
@@ -95,7 +95,7 @@ const Contact = () => {
           </div>
 
           <div 
-            className="animate-on-scroll neon-card bg-white/80 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
+            className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
             style={{ 
               opacity: 0, 
               transform: 'translateY(30px)', 
@@ -103,13 +103,13 @@ const Contact = () => {
             }}
             data-testid="contact-linkedin"
           >
-            <SiLinkedin className="w-8 h-8 text-slate-600 mb-4 mx-auto animate-glow" />
-            <h3 className="text-lg font-bold text-slate-900 mb-2">LinkedIn</h3>
+            <SiLinkedin className="w-8 h-8 text-slate-400 mb-4 mx-auto animate-glow" />
+            <h3 className="text-lg font-bold text-slate-100 mb-2">LinkedIn</h3>
             <a 
               href={personalInfo.linkedin} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-slate-700 hover:text-slate-900 transition-colors duration-300"
+              className="text-slate-300 hover:text-slate-100 transition-colors duration-300"
               data-testid="linkedin-link"
             >
               Connect with me
@@ -120,7 +120,7 @@ const Contact = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
             href={`mailto:${personalInfo.email}`}
-            className="inline-flex items-center px-8 py-4 bg-slate-900 text-slate-50 hover:bg-slate-700 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center px-8 py-4 bg-slate-200 text-slate-900 hover:bg-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
             data-testid="button-send-email"
           >
             <Send className="w-5 h-5 mr-2" />
@@ -130,7 +130,7 @@ const Contact = () => {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 border border-slate-400 text-slate-700 hover:bg-slate-200 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center px-8 py-4 border border-slate-600 text-slate-200 hover:bg-slate-800 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
             data-testid="button-view-github"
           >
             <SiGithub className="w-5 h-5 mr-2" />

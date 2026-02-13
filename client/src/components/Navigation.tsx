@@ -53,16 +53,16 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/65 backdrop-blur-xl border-b border-slate-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/85 backdrop-blur-xl border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <h1 
-              className="text-xl font-bold text-slate-900 cursor-pointer tracking-wide"
+              className="text-xl font-bold text-slate-100 cursor-pointer tracking-wide"
               onClick={() => scrollToSection('#hero')}
               data-testid="nav-logo"
             >
-              <span className="text-slate-900">Pratik</span> <span className="text-slate-500">Patra</span>
+              <span className="text-slate-100">Pratik</span> <span className="text-slate-400">Patra</span>
             </h1>
           </div>
 
@@ -74,8 +74,8 @@ const Navigation = () => {
                   onClick={() => scrollToSection(item.href)}
                   className={`px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     activeSection === item.href.substring(1)
-                      ? 'text-slate-900 bg-slate-200 shadow-[0_2px_8px_rgba(15,23,42,0.08)]'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                      ? 'text-slate-100 bg-slate-800'
+                      : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800'
                   }`}
                   data-testid={`nav-link-${item.href.substring(1)}`}
                 >
@@ -88,7 +88,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 hover:text-slate-900"
+              className="text-slate-400 hover:text-slate-100"
               data-testid="mobile-menu-button"
             >
               {isOpen ? <X className="text-xl" /> : <Menu className="text-xl" />}
@@ -98,7 +98,7 @@ const Navigation = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200">
+        <div className="md:hidden bg-slate-950 border-b border-slate-800">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <button
@@ -106,8 +106,8 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.href)}
                 className={`block px-3 py-2 rounded-full text-base font-medium w-full text-left transition-all duration-300 ${
                   activeSection === item.href.substring(1)
-                    ? 'text-slate-900 bg-slate-200'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                    ? 'text-slate-100 bg-slate-800'
+                    : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800'
                 }`}
                 data-testid={`mobile-nav-link-${item.href.substring(1)}`}
               >

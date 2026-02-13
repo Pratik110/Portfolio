@@ -4,25 +4,25 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(210, 20%, 98%);
-  --foreground: hsl(222, 20%, 17%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(222, 20%, 17%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(222, 20%, 17%);
-  --primary: hsl(220, 26%, 22%);
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(214, 20%, 90%);
-  --secondary-foreground: hsl(222, 20%, 17%);
-  --muted: hsl(214, 16%, 93%);
-  --muted-foreground: hsl(220, 10%, 38%);
-  --accent: hsl(220, 32%, 32%);
-  --accent-foreground: hsl(0, 0%, 100%);
+  --background: hsl(222, 47%, 11%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(222, 28%, 14%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --popover: hsl(222, 28%, 14%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(210, 40%, 98%);
+  --primary-foreground: hsl(222, 47%, 11%);
+  --secondary: hsl(217, 19%, 22%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217, 19%, 18%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(215, 22%, 30%);
+  --accent-foreground: hsl(210, 40%, 98%);
   --destructive: hsl(0, 72%, 51%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(214, 19%, 85%);
-  --input: hsl(214, 19%, 85%);
-  --ring: hsl(220, 26%, 22%);
+  --border: hsl(217, 19%, 24%);
+  --input: hsl(217, 19%, 24%);
+  --ring: hsl(210, 40%, 98%);
 
   --chart-1: hsl(220, 26%, 22%);
   --chart-2: hsl(210, 10%, 45%);
@@ -30,14 +30,14 @@
   --chart-4: hsl(210, 20%, 65%);
   --chart-5: hsl(210, 25%, 75%);
 
-  --sidebar: hsl(0, 0%, 100%);
-  --sidebar-foreground: hsl(222, 20%, 17%);
-  --sidebar-primary: hsl(220, 26%, 22%);
-  --sidebar-primary-foreground: hsl(0, 0%, 100%);
-  --sidebar-accent: hsl(220, 32%, 32%);
-  --sidebar-accent-foreground: hsl(0, 0%, 100%);
-  --sidebar-border: hsl(214, 19%, 85%);
-  --sidebar-ring: hsl(220, 26%, 22%);
+  --sidebar: hsl(222, 28%, 14%);
+  --sidebar-foreground: hsl(210, 40%, 98%);
+  --sidebar-primary: hsl(210, 40%, 98%);
+  --sidebar-primary-foreground: hsl(222, 47%, 11%);
+  --sidebar-accent: hsl(215, 22%, 30%);
+  --sidebar-accent-foreground: hsl(210, 40%, 98%);
+  --sidebar-border: hsl(217, 19%, 24%);
+  --sidebar-ring: hsl(210, 40%, 98%);
 
   --font-inter: 'Space Grotesk', sans-serif;
   --font-sans: 'Space Grotesk', sans-serif;
@@ -62,25 +62,25 @@
 }
 
 .dark {
-  --background: hsl(210, 20%, 98%);
-  --foreground: hsl(222, 20%, 17%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(222, 20%, 17%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(222, 20%, 17%);
-  --primary: hsl(220, 26%, 22%);
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(214, 20%, 90%);
-  --secondary-foreground: hsl(222, 20%, 17%);
-  --muted: hsl(214, 16%, 93%);
-  --muted-foreground: hsl(220, 10%, 38%);
-  --accent: hsl(220, 32%, 32%);
-  --accent-foreground: hsl(0, 0%, 100%);
+  --background: hsl(222, 47%, 11%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(222, 28%, 14%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --popover: hsl(222, 28%, 14%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(210, 40%, 98%);
+  --primary-foreground: hsl(222, 47%, 11%);
+  --secondary: hsl(217, 19%, 22%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217, 19%, 18%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(215, 22%, 30%);
+  --accent-foreground: hsl(210, 40%, 98%);
   --destructive: hsl(0, 72%, 51%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(214, 19%, 85%);
-  --input: hsl(214, 19%, 85%);
-  --ring: hsl(220, 26%, 22%);
+  --border: hsl(217, 19%, 24%);
+  --input: hsl(217, 19%, 24%);
+  --ring: hsl(210, 40%, 98%);
 }
 
 @layer base {
@@ -89,13 +89,9 @@
   }
 
   body {
-    @apply text-slate-800 font-inter antialiased overflow-x-hidden;
+    @apply bg-slate-950 text-slate-100 font-inter antialiased overflow-x-hidden;
     font-family: var(--font-inter);
-    background:
-      radial-gradient(circle at 12% 12%, rgba(99, 102, 241, 0.10) 0%, transparent 22%),
-      radial-gradient(circle at 86% 16%, rgba(56, 189, 248, 0.12) 0%, transparent 22%),
-      radial-gradient(circle at 60% 74%, rgba(148, 163, 184, 0.16) 0%, transparent 30%),
-      linear-gradient(180deg, #f8fafc 0%, #edf2f8 100%);
+    background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
   }
 }
 
@@ -117,7 +113,7 @@
   }
 
   .orbital-ring {
-    border: 1px solid rgba(100, 116, 139, 0.35);
+    border: 1px solid rgba(71, 85, 105, 0.5);
     border-radius: 9999px;
     animation: orbitSpin 26s linear infinite;
   }
@@ -143,31 +139,29 @@
   }
 
   .neon-text {
-    color: #111827;
+    color: #f8fafc;
     letter-spacing: -0.02em;
-    text-shadow: 0 0 18px rgba(99, 102, 241, 0.12);
+    text-shadow: none;
   }
 
   .neon-card {
-    border: 1px solid rgba(148, 163, 184, 0.34);
-    background: linear-gradient(160deg, rgba(255, 255, 255, 0.84), rgba(248, 250, 252, 0.74));
+    border: 1px solid rgba(71, 85, 105, 0.45);
+    background: rgba(15, 23, 42, 0.72);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.8),
-      0 10px 30px rgba(15, 23, 42, 0.07);
+      0 8px 24px rgba(2, 6, 23, 0.5);
     backdrop-filter: blur(8px);
   }
 
   .neon-card:hover {
-    border-color: rgba(71, 85, 105, 0.42);
+    border-color: rgba(100, 116, 139, 0.55);
     box-shadow:
-      0 0 0 1px rgba(99, 102, 241, 0.15),
-      0 16px 36px rgba(15, 23, 42, 0.13);
+      0 12px 28px rgba(2, 6, 23, 0.6);
   }
 
   .futuristic-pill {
     border: 1px solid rgba(100, 116, 139, 0.4);
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    background: rgba(30, 41, 59, 0.75);
+    box-shadow: none;
   }
 
   .logo-marquee-track {
@@ -183,72 +177,16 @@
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
-    border: 1px solid rgba(100, 116, 139, 0.35);
+    border: 1px solid rgba(71, 85, 105, 0.5);
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.85);
-    color: rgb(51 65 85);
+    background: rgba(15, 23, 42, 0.85);
+    color: rgb(203 213 225);
     font-family: var(--font-mono);
     font-size: 0.78rem;
     padding: 0.45rem 0.95rem;
     white-space: nowrap;
   }
 
-  .hero-crazy-bg {
-    background:
-      radial-gradient(circle at 20% 25%, rgba(99, 102, 241, 0.22), transparent 36%),
-      radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.2), transparent 34%),
-      radial-gradient(circle at 52% 80%, rgba(139, 92, 246, 0.16), transparent 40%),
-      linear-gradient(130deg, #f8fafc 0%, #eaf1fb 45%, #eef4ff 100%);
-    animation: bgShift 14s ease-in-out infinite alternate;
-  }
-
-  .hero-scanlines {
-    background:
-      repeating-linear-gradient(
-        0deg,
-        rgba(51, 65, 85, 0.05) 0px,
-        rgba(51, 65, 85, 0.05) 1px,
-        transparent 1px,
-        transparent 8px
-      );
-    mix-blend-mode: multiply;
-    opacity: 0.35;
-    animation: scanDrift 10s linear infinite;
-  }
-
-  .hero-blob {
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(36px);
-    opacity: 0.5;
-    animation: blobFloat 9s ease-in-out infinite;
-  }
-
-  .hero-blob-a {
-    width: 24rem;
-    height: 24rem;
-    left: 6%;
-    top: 12%;
-    background: rgba(79, 70, 229, 0.25);
-  }
-
-  .hero-blob-b {
-    width: 22rem;
-    height: 22rem;
-    right: 8%;
-    top: 18%;
-    background: rgba(14, 165, 233, 0.24);
-    animation-delay: 1.4s;
-  }
-
-  .hero-blob-c {
-    width: 20rem;
-    height: 20rem;
-    left: 38%;
-    bottom: 8%;
-    background: rgba(168, 85, 247, 0.22);
-    animation-delay: 2.2s;
-  }
 
   @keyframes fadeIn {
     from { opacity: 0; }
@@ -291,19 +229,4 @@
     to { transform: translateX(-50%); }
   }
 
-  @keyframes bgShift {
-    0% { filter: hue-rotate(0deg) saturate(1); }
-    100% { filter: hue-rotate(18deg) saturate(1.08); }
-  }
-
-  @keyframes scanDrift {
-    from { background-position: 0 0; }
-    to { background-position: 0 120px; }
-  }
-
-  @keyframes blobFloat {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(26px, -20px) scale(1.08); }
-    66% { transform: translate(-20px, 18px) scale(0.94); }
-  }
 }

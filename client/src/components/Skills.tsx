@@ -108,18 +108,18 @@ const Skills = () => {
   const marqueeItems = [...marqueeLogos, ...marqueeLogos];
 
   return (
-    <section id="skills" className="py-20 bg-transparent" ref={sectionRef}>
+    <section id="skills" className="py-20 bg-slate-950" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 neon-text animate-on-scroll"
+            className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="skills-title"
           >
             Technical Skills
           </h2>
           <p 
-            className="text-xl text-slate-600 max-w-3xl mx-auto animate-on-scroll"
+            className="text-xl text-slate-400 max-w-3xl mx-auto animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="skills-subtitle"
           >
@@ -127,7 +127,7 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="mb-12 overflow-hidden rounded-xl border border-slate-300/70 bg-white/70 backdrop-blur-sm">
+        <div className="mb-12 overflow-hidden rounded-xl border border-slate-800 bg-slate-900/70 backdrop-blur-sm">
           <div className="logo-marquee-track">
             {marqueeItems.map((item, index) => (
               <div
@@ -146,7 +146,7 @@ const Skills = () => {
           {resumeData.skills.map((skillCategory) => (
             <div 
               key={skillCategory.id}
-              className="animate-on-scroll neon-card bg-white/80 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
+              className="animate-on-scroll neon-card bg-slate-900/70 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
@@ -155,20 +155,20 @@ const Skills = () => {
               data-testid={`skill-category-${skillCategory.id}`}
             >
               <div className="flex items-center mb-4">
-                <span className="text-slate-600 animate-glow">
+                <span className="text-slate-400 animate-glow">
                   {getSkillCategoryIcon(skillCategory.icon)}
                 </span>
-                <h3 className="text-xl font-bold text-slate-900" data-testid={`skill-title-${skillCategory.id}`}>
+                <h3 className="text-xl font-bold text-slate-100" data-testid={`skill-title-${skillCategory.id}`}>
                   {skillCategory.title}
                 </h3>
               </div>
               <div className="space-y-3">
                 {skillCategory.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="flex items-center" data-testid={`skill-item-${skillCategory.id}-${skillIndex}`}>
-                    <span className="text-slate-500">
+                    <span className="text-slate-400">
                       {getSkillIcon(skill.icon)}
                     </span>
-                    <span className="text-slate-700">{skill.name}</span>
+                    <span className="text-slate-300">{skill.name}</span>
                   </div>
                 ))}
               </div>
