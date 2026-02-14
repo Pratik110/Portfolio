@@ -93,7 +93,7 @@ const Experience = () => {
           {resumeData.experience.map((exp) => (
             <div 
               key={exp.id} 
-              className="animate-on-scroll neon-card rounded-xl p-8"
+              className="animate-on-scroll neon-card rounded-xl p-8 animate-float-slow"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
@@ -103,14 +103,14 @@ const Experience = () => {
             >
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-cyan-50 mb-2 flex items-center gap-2" data-testid={`position-${exp.id}`}>
-                    <span className="text-cyan-300 animate-glow">{getCompanyLogo(exp.id)}</span>
+                  <h3 className="text-2xl font-bold text-rose-50 mb-2 flex items-center gap-2" data-testid={`position-${exp.id}`}>
+                    <span className="text-orange-300 animate-glow">{getCompanyLogo(exp.id)}</span>
                     {exp.position}
                   </h3>
-                  <p className="text-xl text-cyan-100 font-semibold" data-testid={`company-${exp.id}`}>
+                  <p className="text-xl text-rose-100 font-semibold" data-testid={`company-${exp.id}`}>
                     {exp.company}
                   </p>
-                  <p className="text-cyan-100/70" data-testid={`duration-${exp.id}`}>
+                  <p className="text-rose-100/70" data-testid={`duration-${exp.id}`}>
                     {exp.duration}
                   </p>
                 </div>
@@ -126,19 +126,19 @@ const Experience = () => {
 
               <div className="space-y-8">
                 {exp.projects.map((project, projectIndex) => (
-                  <div key={project.id} className="neon-panel rounded-lg p-6" data-testid={`project-${project.id}`}>
-                    <h4 className="text-lg font-bold text-cyan-50 mb-2 flex items-center">
+                  <div key={project.id} className="neon-panel rounded-lg p-6 animate-float-fast" data-testid={`project-${project.id}`}>
+                    <h4 className="text-lg font-bold text-rose-50 mb-2 flex items-center">
                       {getProjectIcon(project.id)}
                       Project {projectIndex + 1}: {project.title}
                     </h4>
-                    <p className="text-cyan-100/85 mb-4 font-medium flex items-center gap-2" data-testid={`project-info-${project.id}`}>
-                      {project.id.includes('zs') && <SiApachekafka className="text-cyan-300" />}
+                    <p className="text-rose-100/85 mb-4 font-medium flex items-center gap-2" data-testid={`project-info-${project.id}`}>
+                      {project.id.includes('zs') && <SiApachekafka className="text-orange-300 animate-glow" />}
                       Industry: {project.industry} | Role: {project.role}
                     </p>
-                    <ul className="space-y-3 text-cyan-50/90">
+                    <ul className="space-y-3 text-rose-50/90">
                       {project.achievements.map((achievement, achievementIndex) => (
                         <li key={achievementIndex} className="flex items-start" data-testid={`achievement-${project.id}-${achievementIndex}`}>
-                          <span className="text-fuchsia-300">
+                          <span className="text-orange-300 animate-glow">
                             {getAchievementIcon(achievement, achievementIndex)}
                           </span>
                           {achievement}

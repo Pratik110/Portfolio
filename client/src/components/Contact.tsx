@@ -55,7 +55,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div 
-            className="animate-on-scroll neon-card rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
+            className="animate-on-scroll neon-card rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1 animate-float-fast"
             style={{ 
               opacity: 0, 
               transform: 'translateY(30px)', 
@@ -64,7 +64,7 @@ const Contact = () => {
             data-testid="contact-phone"
           >
             <Phone className="w-8 h-8 neon-icon mb-4 mx-auto animate-glow" />
-            <h3 className="text-lg font-bold text-cyan-50 mb-2">Phone</h3>
+            <h3 className="text-lg font-bold text-rose-50 mb-2">Phone</h3>
             <a 
               href={`tel:${personalInfo.phone}`} 
               className="neon-link transition-colors duration-300"
@@ -75,7 +75,7 @@ const Contact = () => {
           </div>
 
           <div 
-            className="animate-on-scroll neon-card rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
+            className="animate-on-scroll neon-card rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1 animate-float-slow"
             style={{ 
               opacity: 0, 
               transform: 'translateY(30px)', 
@@ -84,7 +84,7 @@ const Contact = () => {
             data-testid="contact-email"
           >
             <SiGmail className="w-8 h-8 neon-icon mb-4 mx-auto animate-glow" />
-            <h3 className="text-lg font-bold text-cyan-50 mb-2">Email</h3>
+            <h3 className="text-lg font-bold text-rose-50 mb-2">Email</h3>
             <a 
               href={`mailto:${personalInfo.email}`} 
               className="neon-link transition-colors duration-300"
@@ -95,7 +95,7 @@ const Contact = () => {
           </div>
 
           <div 
-            className="animate-on-scroll neon-card rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
+            className="animate-on-scroll neon-card rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1 animate-float-fast"
             style={{ 
               opacity: 0, 
               transform: 'translateY(30px)', 
@@ -104,7 +104,7 @@ const Contact = () => {
             data-testid="contact-linkedin"
           >
             <SiLinkedin className="w-8 h-8 neon-icon mb-4 mx-auto animate-glow" />
-            <h3 className="text-lg font-bold text-cyan-50 mb-2">LinkedIn</h3>
+            <h3 className="text-lg font-bold text-rose-50 mb-2">LinkedIn</h3>
             <a 
               href={personalInfo.linkedin} 
               target="_blank" 
@@ -120,7 +120,7 @@ const Contact = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
             href={`mailto:${personalInfo.email}`}
-            className="inline-flex items-center px-8 py-4 neon-button-primary rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center px-8 py-4 neon-button-primary rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 animate-float-fast"
             data-testid="button-send-email"
           >
             <Send className="w-5 h-5 mr-2" />
@@ -130,7 +130,7 @@ const Contact = () => {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 neon-button-secondary rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center px-8 py-4 neon-button-secondary rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 animate-float-slow"
             data-testid="button-view-github"
           >
             <SiGithub className="w-5 h-5 mr-2" />

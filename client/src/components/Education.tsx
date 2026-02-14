@@ -63,7 +63,7 @@ const Education = () => {
           {resumeData.education.map((edu) => (
             <div 
               key={edu.id}
-              className="animate-on-scroll neon-card rounded-xl p-8 transition-all duration-300 transform hover:-translate-y-1"
+              className="animate-on-scroll neon-card rounded-xl p-8 transition-all duration-300 transform hover:-translate-y-1 animate-float-slow"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
@@ -73,18 +73,18 @@ const Education = () => {
             >
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-cyan-50 mb-2" data-testid={`degree-${edu.id}`}>
+                  <h3 className="text-2xl font-bold text-rose-50 mb-2" data-testid={`degree-${edu.id}`}>
                     {edu.degree}
                   </h3>
                   {edu.stream && (
-                    <p className="text-xl text-cyan-100/90 font-semibold mb-2" data-testid={`stream-${edu.id}`}>
+                    <p className="text-xl text-rose-100/90 font-semibold mb-2" data-testid={`stream-${edu.id}`}>
                       {edu.stream}
                     </p>
                   )}
-                  <p className="text-lg text-cyan-100/90 mb-2" data-testid={`institution-${edu.id}`}>
+                  <p className="text-lg text-rose-100/90 mb-2" data-testid={`institution-${edu.id}`}>
                     {edu.institution}
                   </p>
-                  <p className="text-cyan-100/70" data-testid={`board-${edu.id}`}>
+                  <p className="text-rose-100/70" data-testid={`board-${edu.id}`}>
                     {edu.board}
                   </p>
                 </div>
@@ -95,7 +95,7 @@ const Education = () => {
                       {edu.score}{edu.scoreType === 'CGPA' ? ' CGPA' : '%'}
                     </span>
                   </div>
-                  <p className="text-cyan-100/70" data-testid={`year-${edu.id}`}>{edu.year}</p>
+                  <p className="text-rose-100/70" data-testid={`year-${edu.id}`}>{edu.year}</p>
                 </div>
               </div>
             </div>
