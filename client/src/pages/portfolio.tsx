@@ -10,7 +10,7 @@ const Portfolio = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen text-slate-100">
       <Navigation />
       <Hero />
       <Experience />
@@ -19,10 +19,10 @@ const Portfolio = () => {
       <Contact />
       
       {/* Footer */}
-      <footer className="bg-slate-950 border-t border-slate-800 py-8">
+      <footer className="py-8 border-t border-cyan-300/25 bg-[#060a1f]/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-slate-400" data-testid="footer-text">
+            <p className="text-cyan-100/70" data-testid="footer-text">
               © {currentYear} Pratik Patra. Built for clean data, reliable pipelines, and scalable systems.
             </p>
           </div>

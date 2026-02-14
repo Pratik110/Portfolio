@@ -70,18 +70,18 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-20 bg-slate-950" ref={sectionRef}>
+    <section id="experience" className="py-20 neon-section" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-4 text-slate-100 animate-on-scroll"
+            className="text-4xl md:text-5xl font-bold mb-4 neon-title animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="experience-title"
           >
             Professional Experience
           </h2>
           <p 
-            className="text-xl text-slate-400 max-w-3xl mx-auto animate-on-scroll"
+            className="text-xl neon-subtitle max-w-3xl mx-auto animate-on-scroll"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' }}
             data-testid="experience-subtitle"
           >
@@ -93,7 +93,7 @@ const Experience = () => {
           {resumeData.experience.map((exp) => (
             <div 
               key={exp.id} 
-              className="animate-on-scroll neon-card rounded-xl p-8 bg-slate-900/70"
+              className="animate-on-scroll neon-card rounded-xl p-8"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
@@ -103,20 +103,20 @@ const Experience = () => {
             >
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-slate-100 mb-2 flex items-center gap-2" data-testid={`position-${exp.id}`}>
-                    <span className="text-slate-400 animate-glow">{getCompanyLogo(exp.id)}</span>
+                  <h3 className="text-2xl font-bold text-cyan-50 mb-2 flex items-center gap-2" data-testid={`position-${exp.id}`}>
+                    <span className="text-cyan-300 animate-glow">{getCompanyLogo(exp.id)}</span>
                     {exp.position}
                   </h3>
-                  <p className="text-xl text-slate-200 font-semibold" data-testid={`company-${exp.id}`}>
+                  <p className="text-xl text-cyan-100 font-semibold" data-testid={`company-${exp.id}`}>
                     {exp.company}
                   </p>
-                  <p className="text-slate-400" data-testid={`duration-${exp.id}`}>
+                  <p className="text-cyan-100/70" data-testid={`duration-${exp.id}`}>
                     {exp.duration}
                   </p>
                 </div>
                 {exp.current && (
                   <div className="mt-4 lg:mt-0">
-                    <span className="inline-flex items-center px-4 py-2 bg-slate-800 text-slate-200 rounded-full text-sm font-semibold border border-slate-700">
+                    <span className="inline-flex items-center px-4 py-2 neon-chip rounded-full text-sm font-semibold">
                       <CheckCircle className="w-4 h-4 mr-2" />
                       Current Role
                     </span>
@@ -126,19 +126,19 @@ const Experience = () => {
 
               <div className="space-y-8">
                 {exp.projects.map((project, projectIndex) => (
-                  <div key={project.id} className="bg-slate-900 border border-slate-800 rounded-lg p-6" data-testid={`project-${project.id}`}>
-                    <h4 className="text-lg font-bold text-slate-100 mb-2 flex items-center">
+                  <div key={project.id} className="neon-panel rounded-lg p-6" data-testid={`project-${project.id}`}>
+                    <h4 className="text-lg font-bold text-cyan-50 mb-2 flex items-center">
                       {getProjectIcon(project.id)}
                       Project {projectIndex + 1}: {project.title}
                     </h4>
-                    <p className="text-slate-300 mb-4 font-medium flex items-center gap-2" data-testid={`project-info-${project.id}`}>
-                      {project.id.includes('zs') && <SiApachekafka className="text-slate-400" />}
+                    <p className="text-cyan-100/85 mb-4 font-medium flex items-center gap-2" data-testid={`project-info-${project.id}`}>
+                      {project.id.includes('zs') && <SiApachekafka className="text-cyan-300" />}
                       Industry: {project.industry} | Role: {project.role}
                     </p>
-                    <ul className="space-y-3 text-slate-300">
+                    <ul className="space-y-3 text-cyan-50/90">
                       {project.achievements.map((achievement, achievementIndex) => (
                         <li key={achievementIndex} className="flex items-start" data-testid={`achievement-${project.id}-${achievementIndex}`}>
-                          <span className="text-slate-400">
+                          <span className="text-fuchsia-300">
                             {getAchievementIcon(achievement, achievementIndex)}
                           </span>
                           {achievement}
