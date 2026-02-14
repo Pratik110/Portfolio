@@ -1,12 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import {
   Users, Cloud, ServerCog, Database, Rocket, BarChart,
-  Lightbulb, Shield, Code, Presentation,
+  Lightbulb, Shield, Code, Presentation, Briefcase,
   ArrowUpDown, Lock, Handshake, Plus, Table,
-  Gauge, CheckCircle, UserCog, NetworkIcon, Heart,
-  FileHeart, Zap, Building2
+  Gauge, CheckCircle, UserCog, NetworkIcon, Building2
 } from 'lucide-react';
-import { SiApachekafka } from 'react-icons/si';
 import { resumeData } from '@/data/resumeData';
 
 const Experience = () => {
@@ -37,15 +35,8 @@ const Experience = () => {
     return () => observer.disconnect();
   }, []);
 
-  const getProjectIcon = (projectId: string) => {
-    const iconMap: { [key: string]: React.ReactNode } = {
-      'capital-markets': <BarChart className="w-5 h-5 mr-2" />,
-      'healthcare-migration': <Heart className="w-5 h-5 mr-2" />,
-      'claims-settlement': <FileHeart className="w-5 h-5 mr-2" />,
-      'hcm-solutions': <UserCog className="w-5 h-5 mr-2" />,
-      'energy-solutions': <Zap className="w-5 h-5 mr-2" />
-    };
-    return iconMap[projectId] || <Code className="w-5 h-5 mr-2" />;
+  const getProjectIcon = (_projectId: string) => {
+    return <Code className="w-5 h-5 mr-2" />;
   };
 
   const getAchievementIcon = (achievement: string, index: number) => {
@@ -131,9 +122,16 @@ const Experience = () => {
                       {getProjectIcon(project.id)}
                       Project {projectIndex + 1}: {project.title}
                     </h4>
-                    <p className="text-slate-300 mb-4 font-medium flex items-center gap-2" data-testid={`project-info-${project.id}`}>
-                      {project.id.includes('zs') && <SiApachekafka className="text-yellow-300" />}
-                      Industry: {project.industry} | Role: {project.role}
+                    <p className="text-slate-300 mb-4 font-medium flex items-center gap-2 flex-wrap" data-testid={`project-info-${project.id}`}>
+                      <span className="inline-flex items-center gap-1.5">
+                        <Briefcase className="w-4 h-4 text-yellow-300" />
+                        Industry: {project.industry}
+                      </span>
+                      <span className="text-slate-500">|</span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <UserCog className="w-4 h-4 text-blue-200" />
+                        Role: {project.role}
+                      </span>
                     </p>
                     <ul className="space-y-3 text-slate-300">
                       {project.achievements.map((achievement, achievementIndex) => (
