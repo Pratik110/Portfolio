@@ -93,7 +93,7 @@ const Experience = () => {
           {resumeData.experience.map((exp) => (
             <div 
               key={exp.id} 
-              className="animate-on-scroll neon-card rounded-xl p-8 animate-float-slow"
+              className="animate-on-scroll neon-card rounded-xl p-8"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
@@ -103,14 +103,14 @@ const Experience = () => {
             >
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-rose-50 mb-2 flex items-center gap-2" data-testid={`position-${exp.id}`}>
-                    <span className="text-orange-300 animate-glow">{getCompanyLogo(exp.id)}</span>
+                  <h3 className="text-2xl font-bold text-slate-100 mb-2 flex items-center gap-2" data-testid={`position-${exp.id}`}>
+                    <span className="text-blue-200">{getCompanyLogo(exp.id)}</span>
                     {exp.position}
                   </h3>
-                  <p className="text-xl text-rose-100 font-semibold" data-testid={`company-${exp.id}`}>
+                  <p className="text-xl text-slate-200 font-semibold" data-testid={`company-${exp.id}`}>
                     {exp.company}
                   </p>
-                  <p className="text-rose-100/70" data-testid={`duration-${exp.id}`}>
+                  <p className="text-slate-400" data-testid={`duration-${exp.id}`}>
                     {exp.duration}
                   </p>
                 </div>
@@ -126,19 +126,19 @@ const Experience = () => {
 
               <div className="space-y-8">
                 {exp.projects.map((project, projectIndex) => (
-                  <div key={project.id} className="neon-panel rounded-lg p-6 animate-float-fast" data-testid={`project-${project.id}`}>
-                    <h4 className="text-lg font-bold text-rose-50 mb-2 flex items-center">
+                  <div key={project.id} className="neon-panel rounded-lg p-6" data-testid={`project-${project.id}`}>
+                    <h4 className="text-lg font-bold text-slate-100 mb-2 flex items-center">
                       {getProjectIcon(project.id)}
                       Project {projectIndex + 1}: {project.title}
                     </h4>
-                    <p className="text-rose-100/85 mb-4 font-medium flex items-center gap-2" data-testid={`project-info-${project.id}`}>
-                      {project.id.includes('zs') && <SiApachekafka className="text-orange-300 animate-glow" />}
+                    <p className="text-slate-300 mb-4 font-medium flex items-center gap-2" data-testid={`project-info-${project.id}`}>
+                      {project.id.includes('zs') && <SiApachekafka className="text-yellow-300" />}
                       Industry: {project.industry} | Role: {project.role}
                     </p>
-                    <ul className="space-y-3 text-rose-50/90">
+                    <ul className="space-y-3 text-slate-300">
                       {project.achievements.map((achievement, achievementIndex) => (
                         <li key={achievementIndex} className="flex items-start" data-testid={`achievement-${project.id}-${achievementIndex}`}>
-                          <span className="text-orange-300 animate-glow">
+                          <span className="text-blue-200">
                             {getAchievementIcon(achievement, achievementIndex)}
                           </span>
                           {achievement}

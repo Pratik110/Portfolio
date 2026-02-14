@@ -19,10 +19,10 @@ const Portfolio = () => {
       <Contact />
       
       {/* Footer */}
-      <footer className="py-8 border-t border-red-300/25 bg-[#170b0a]/70 backdrop-blur-sm">
+      <footer className="py-8 border-t border-slate-500/25 bg-[#111720]/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-rose-100/70" data-testid="footer-text">
+            <p className="text-slate-300" data-testid="footer-text">
               © {currentYear} Pratik Patra. Built for clean data, reliable pipelines, and scalable systems.
             </p>
           </div>

@@ -127,7 +127,7 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="mb-12 overflow-hidden rounded-xl border border-red-300/30 bg-[#2a1411]/65 backdrop-blur-sm shadow-[0_0_24px_rgba(255,110,74,0.16)] animate-float-slow">
+        <div className="mb-12 overflow-hidden rounded-xl border border-slate-400/30 bg-slate-800/40 backdrop-blur-sm">
           <div className="logo-marquee-track">
             {marqueeItems.map((item, index) => (
               <div
@@ -146,7 +146,7 @@ const Skills = () => {
           {resumeData.skills.map((skillCategory) => (
             <div 
               key={skillCategory.id}
-              className="animate-on-scroll neon-card rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1 animate-float-fast"
+              className="animate-on-scroll neon-card rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1"
               style={{ 
                 opacity: 0, 
                 transform: 'translateY(30px)', 
@@ -155,20 +155,20 @@ const Skills = () => {
               data-testid={`skill-category-${skillCategory.id}`}
             >
               <div className="flex items-center mb-4">
-                <span className="text-orange-300 animate-glow">
+                <span className="text-blue-200">
                   {getSkillCategoryIcon(skillCategory.icon)}
                 </span>
-                <h3 className="text-xl font-bold text-rose-50" data-testid={`skill-title-${skillCategory.id}`}>
+                <h3 className="text-xl font-bold text-slate-100" data-testid={`skill-title-${skillCategory.id}`}>
                   {skillCategory.title}
                 </h3>
               </div>
               <div className="space-y-3">
                 {skillCategory.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="flex items-center" data-testid={`skill-item-${skillCategory.id}-${skillIndex}`}>
-                    <span className="text-orange-300 animate-glow">
+                    <span className="text-yellow-300">
                       {getSkillIcon(skill.icon)}
                     </span>
-                    <span className="text-rose-100/90">{skill.name}</span>
+                    <span className="text-slate-300">{skill.name}</span>
                   </div>
                 ))}
               </div>

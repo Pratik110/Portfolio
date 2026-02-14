@@ -62,7 +62,7 @@ const Navigation = () => {
               onClick={() => scrollToSection('#hero')}
               data-testid="nav-logo"
             >
-              <span className="text-rose-100">Pratik</span> <span className="text-orange-300">Patra</span>
+              <span className="text-slate-100">Pratik</span> <span className="text-blue-200">Patra</span>
             </h1>
           </div>
 
@@ -74,8 +74,8 @@ const Navigation = () => {
                   onClick={() => scrollToSection(item.href)}
                   className={`px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 animate-fade-in ${
                     activeSection === item.href.substring(1)
-                      ? 'text-rose-50 bg-red-500/20 border border-orange-300/45 shadow-[0_0_18px_rgba(255,112,84,0.24)]'
-                      : 'text-rose-100/75 hover:text-rose-50 hover:bg-red-500/15 hover:border hover:border-red-300/40'
+                      ? 'text-slate-100 bg-slate-700/50 border border-blue-200/40'
+                      : 'text-slate-300 hover:text-slate-100 hover:bg-slate-700/40 hover:border hover:border-slate-400/40'
                   }`}
                   data-testid={`nav-link-${item.href.substring(1)}`}
                 >
@@ -88,7 +88,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-rose-200/75 hover:text-rose-100"
+              className="text-slate-300 hover:text-slate-100"
               data-testid="mobile-menu-button"
             >
               {isOpen ? <X className="text-xl" /> : <Menu className="text-xl" />}
@@ -98,7 +98,7 @@ const Navigation = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-[#190d0b]/95 border-b border-red-300/25">
+        <div className="md:hidden bg-[#0f141c]/95 border-b border-slate-400/30">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <button
@@ -106,8 +106,8 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.href)}
                 className={`block px-3 py-2 rounded-full text-base font-medium w-full text-left transition-all duration-300 ${
                   activeSection === item.href.substring(1)
-                    ? 'text-rose-50 bg-red-500/20 border border-orange-300/40'
-                    : 'text-rose-100/75 hover:text-rose-50 hover:bg-red-500/15'
+                    ? 'text-slate-100 bg-slate-700/50 border border-blue-200/40'
+                    : 'text-slate-300 hover:text-slate-100 hover:bg-slate-700/40'
                 }`}
                 data-testid={`mobile-nav-link-${item.href.substring(1)}`}
               >

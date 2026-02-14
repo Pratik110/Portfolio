@@ -22,34 +22,34 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center neon-section">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(255,119,82,0.20),transparent_25%),radial-gradient(circle_at_18%_72%,rgba(255,85,62,0.18),transparent_30%)] animate-float-slow"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(157,193,233,0.18),transparent_25%),radial-gradient(circle_at_18%_72%,rgba(252,230,144,0.14),transparent_30%)]"></div>
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 w-full text-center">
         <div className="animate-fade-in">
           <div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 neon-title leading-[0.95]" data-testid="hero-name">
               {personalInfo.name}
             </h1>
-            <h2 className="text-2xl md:text-3xl font-medium text-rose-100/90 mb-8 animate-slide-up tracking-wide" data-testid="hero-title">
+            <h2 className="text-2xl md:text-3xl font-medium text-slate-200 mb-8 animate-slide-up tracking-wide" data-testid="hero-title">
               {personalInfo.title}
             </h2>
             <p className="text-lg md:text-xl neon-subtitle mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up" data-testid="hero-description">
               Data Engineer specializing in AWS and Big Data, with expertise in Spark, Snowflake, and Python-based ETL automation. Experienced in cloud migrations, cost optimization, and CI/CD integration for production-ready data platforms.
             </p>
             <div className="grid md:grid-cols-2 gap-6 mb-10 max-w-3xl mx-auto">
-              <div className="neon-card rounded-2xl p-6 text-left animate-float-slow">
-                <p className="text-sm text-rose-100/70 mb-2">Focus</p>
-                <p className="text-rose-50 text-lg">Cloud data pipelines, platform migration, and production-scale ETL orchestration.</p>
+              <div className="neon-card rounded-2xl p-6 text-left">
+                <p className="text-sm text-slate-300 mb-2">Focus</p>
+                <p className="text-slate-100 text-lg">Cloud data pipelines, platform migration, and production-scale ETL orchestration.</p>
               </div>
-              <div className="neon-card rounded-2xl p-6 text-left animate-float-fast">
-                <p className="text-sm text-rose-100/70 mb-3">Quick Snapshot</p>
+              <div className="neon-card rounded-2xl p-6 text-left">
+                <p className="text-sm text-slate-300 mb-3">Quick Snapshot</p>
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   <div className="neon-panel rounded-lg p-3">
-                    <p className="text-rose-100/70">Experience</p>
-                    <p className="text-rose-50 font-semibold">6+ Years</p>
+                    <p className="text-slate-300">Experience</p>
+                    <p className="text-slate-100 font-semibold">6+ Years</p>
                   </div>
                   <div className="neon-panel rounded-lg p-3">
-                    <p className="text-rose-100/70">Domains</p>
-                    <p className="text-rose-50 font-semibold">Healthcare, Finance</p>
+                    <p className="text-slate-300">Domains</p>
+                    <p className="text-slate-100 font-semibold">Healthcare, Finance</p>
                   </div>
                 </div>
               </div>
