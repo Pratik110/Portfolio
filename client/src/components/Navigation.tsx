@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-const Navigation = () => {
+const Navigation = ({ onLogoClick }: { onLogoClick?: () => void }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
@@ -9,6 +9,9 @@ const Navigation = () => {
     { href: '#hero', label: 'Home' },
     { href: '#experience', label: 'Experience' },
     { href: '#skills', label: 'Skills' },
+    { href: '#score-hub', label: 'Challenges' },
+    { href: '#architecture-flow', label: 'Architecture' },
+    { href: '#data-bot', label: 'Data Bot' },
     { href: '#education', label: 'Education' },
     { href: '#contact', label: 'Contact' },
   ];
@@ -59,7 +62,10 @@ const Navigation = () => {
           <div className="flex-shrink-0">
             <h1 
               className="text-xl font-bold neon-title cursor-pointer tracking-wide"
-              onClick={() => scrollToSection('#hero')}
+              onClick={() => {
+                onLogoClick?.();
+                scrollToSection('#hero');
+              }}
               data-testid="nav-logo"
             >
               <span className="text-slate-100">Pratik</span> <span className="text-blue-200">Patra</span>

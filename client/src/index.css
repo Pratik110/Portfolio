@@ -83,6 +83,13 @@
       radial-gradient(circle at 50% 92%, rgba(143, 172, 201, 0.14), transparent 36%),
       linear-gradient(180deg, #0b0f14 0%, #131922 52%, #10151d 100%);
   }
+
+  .elite-mode {
+    background:
+      radial-gradient(circle at 12% 10%, rgba(56, 189, 248, 0.18), transparent 30%),
+      radial-gradient(circle at 86% 22%, rgba(217, 70, 239, 0.14), transparent 26%),
+      linear-gradient(180deg, #080d1b 0%, #0a1224 52%, #0b1020 100%);
+  }
 }
 
 @layer utilities {
@@ -154,6 +161,20 @@
     border-color: rgba(170, 194, 222, 0.42);
     box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
     transform: translateY(-4px);
+  }
+
+  .elite-mode .neon-card {
+    border-color: rgba(56, 189, 248, 0.42);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3), 0 0 24px rgba(56, 189, 248, 0.12);
+  }
+
+  .elite-mode .neon-title {
+    color: #e9f7ff;
+  }
+
+  .elite-mode .neon-button-primary {
+    background: linear-gradient(100deg, rgba(56, 189, 248, 0.88), rgba(167, 139, 250, 0.88));
+    color: #051225;
   }
 
   .futuristic-pill {
